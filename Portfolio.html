@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karun's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+
+        .text-container {
+      font-size: 3em;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .static-text {
+      color: white;
+    }
+
+    .dynamic-text {
+      display: inline-block;
+      transition: color 0.1s; /* Smooth color transition */
+    }
+    /* The blinking cursor */
+    .cursor {
+      display: inline-block;
+      width: 6px; /* Cursor width */
+      height: 1.2em; /* Cursor height */
+      background-color: white; /* Cursor color */
+      margin-left: 5px; /* Space between text and cursor */
+      animation: blink 0.5s step-end infinite; /* Animation for blinking */
+    }
+
+    @keyframes blink {
+      50% {
+        background-color: transparent; /* Make cursor invisible */
+      }
+    }
+        header {
+            margin-top: 5px;
+            background-color: #FFD700; /* Bright yellow color */
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .header-left {
+            flex: 1;
+            background-color: #FFD700; /* Bright yellow for left box */
+            height: 100%;
+        }
+
+        .header-right {
+            flex: 1;
+            text-align: center;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-right h1 {
+            font-size: 2.5rem;
+        }
+
+        .header-right p {
+            font-size: 1.2rem;
+        }
+
+        .header-right .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f05454;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .service {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: left;
+        }
+
+        .counters {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .counter {
+            text-align: center;
+        }
+
+        .counter h3 {
+            font-size: 3rem;
+            color: #f05454;
+        }
+
+        
+        .box {
+            width: 100%;
+            height: 460px;
+            background-color: rgb(235, 235, 235);
+        }
+        .box-2{
+            float: left;
+            margin-left: 270px;
+            width: 25%;
+            height: 60%;
+            background-color: #ffc400;
+            border: 0px solid white;
+            border-radius: 12%;
+
+        }
+        .box-3{
+            float: right;
+            width: 25%;
+            height: 60%;
+            background-color: #3ca966 ;
+            margin-right: 270px;
+            border: 0px solid white;
+            border-radius: 12%;
+
+        }
+       
+        .box21{
+            float: left;
+            width: 49%;
+            height: 49%;
+
+        }
+        .box22{
+            float: right;
+            width: 49%;
+            height: 49%;
+
+        }
+        .box3{
+            background-color: rgb(227, 227, 227);
+            width: 100%;
+            height: 1800px;
+        }
+
+
+
+        .latest-news {
+    padding: 20px;
+    text-align: center;
+}
+
+.latest-news h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    margin : 10px 0px;
+    border-radius: 15%;
+}
+
+.news-card .date {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 10px 15px;
+}
+
+.news-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 15px;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+    
+    </style>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-left"> <img src="2.jpg" width="400px" height="400px" style="border-radius: 50%; margin-left: 100px;" > </div>
+        <div class="header-right">
+            <dotlottie-player src="https://lottie.host/9c253e51-667d-4cbd-b768-de4b236ca157/Rjq0q0vHeS.lottie" background="transparent" speed="1" style=" margin-left:30px width:80px; height: 80px" loop autoplay></dotlottie-player>
+            <h1 style="color: white; font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 32px;font-weight: light; letter-spacing: 5px;">KARUN BOLLI</h1>
+            <div class="text-container">
+                <span class="static-text" style="margin-left: 30px;margin-right: 15px; color: white;">This is my</span>
+                <span class="dynamic-text" id="dynamicText"> </span>
+                <span class="cursor"> </span>
+              </div>
+            <p style="color: white;font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small; letter-spacing: 2px;">Product Design Engineer (SOLIDWORKS) & Quality Control Head.</p>
+            <p style="color: rgb(103, 103, 103);font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: small; letter-spacing: 2px;"> Working hard is a skill that should be learned...</p>
+            <a href="#services" class="btn" style="height: 20px; width: 100px; align-items: center; background-color: #FFD700; border: 3px solid  white; margin-left: 35%;"> Read More</a>
+        </div>
+    </header>
+
+    <div class="box">
+        <br>
+         <img src ="10.png" class="rot" width="150px" height="150px" style="float: right; margin-right: 160px; transform: rotate(25deg);"><br>
+                <p style="font-size: 20px; letter-spacing: 2px; font-weight: 50px; margin-left: 70px;"> ABOUT ME</p>
+                <p><h2 style="word-spacing: 8px;letter-spacing: 2px; margin-left: 70px;">My Professional Summary</h2></p>
+        <div class="box-2">
+            <h4 style="word-spacing: 2px;letter-spacing: 1.2px; margin-left: 10px; color: white; ;">Innovative Product Design Engineer</h4>
+            <p style="color: white;font-size: smaller;font-family: Verdana, Geneva, Tahoma, sans-serif;margin:-7% 10px; text-align: center;justify-content: center;">Innovative and detail-oriented Product Design Engineer with a strong background in
+                SOLIDWORKS, quality control, and CAD design. Proven expertise in implementing Six Sigma
+                methodologies, production process mapping, and lean processes to enhance
+                manufacturing efficiency.</p>
+            </div>
+
+            <div class="box-3">
+                <h4 style="word-spacing: 2px;letter-spacing: 1.2px; margin-left: 10px; color: white;">Expert in CNC Programming and Switchgear Design</h4>
+                <p style="color: white;font-size: smaller;font-family: Verdana, Geneva, Tahoma, sans-serif;margin:-7% 10px; text-align: center;justify-content: center;">Experienced in CNC programming, switchgear designing, and
+                    material flow reduction. Adept at working with industry leaders such as Siemens, Square D,
+                    General Electric, Cutler-Hammer, and Eaton in panel designing and switchgear. Solid
+                    foundation in aerospace and aeronautical engineering, with comprehensive knowledge of
+                    specialized courses.</p> 
+            </div>         
+
+
+    </div> 
+
+    
+
+    <div class="box3">
+        <br>
+
+        <section class="latest-news">
+            <h1>Projects</h1>
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="p1.webp" alt="News 1">
+                     <h3>Design and manufacture an automobile chassis.</h3>
+                    <p class="date" style="text-align: center; justify-content: center; margin: 15px;"> Designed the chassis structure and programmed the CNC machine for
+                        precise machining. Ensured the chassis met all structural and safety
+                        requirements, optimizing for weight and durability.
+                        </p>
+                </div>
+                <div class="news-card">
+                    <img src="game.jpg" alt="News 2">
+                    <h3>Game Console</h3>
+                    <p class="date">Programmed and operated CNC machines to produce high-precision parts
+                        for game consoles, ensuring quality and consistency in production. Focused on
+                        minimizing material waste and optimizing production speed.</p>
+                </div>
+                <div class="news-card">
+                    <img src="jet.jpg" alt="News 3">
+                    <h3>Noise Reduction Techniques at Jet Exhaust Nozzle</h3>
+                    <p class="date">various nozzle configurations, including chevron nozzles, to
+                        reduce noise. Conducted extensive simulations to analyze vibrations and acoustic
+                        performance, optimizing the design for noise reduction. Implemented design
+                        changes based on simulation results to achieve significant noise reduction.</p>
+                </div>
+                
+                <div class="news-card">
+                    <img src="man.jpg" alt="News 4">
+                    <h3>Reducing Material Flow Wastage in Production Line</h3>
+                    <p class="date">Analyzed the production process to identify areas of material wastage.
+                        Implemented process improvements to streamline material flow, resulting in
+                        increased efficiency and reduced costs. Utilized problem-solving techniques to
+                        address bottlenecks and eliminate inefficiencies, achieving a 25% reduction in
+                        material waste.</p>
+                </div>
+                <div class="news-card">
+                    <img src="arm.png" alt="News 5">
+                    <h3>Robot Arm Pick and Place  </h3>
+                    <p class="date">Led a team to assemble the robot arm and connect it to an Arduino board.
+                        Directed the programming of servos to perform precise pick-and-place tasks,
+                        simulating industrial automation processes. Developed control algorithms to
+                        enhance the accuracy and speed of the robot arm, resulting in a 30% improvement in
+                        task efficiency.</p>
+                </div>
+                <div class="news-card">
+                    <img src="roller.avif" alt="News 6">
+                    <h3>Roller Support Assembly</h3>
+                    <p class="date"> Modeled various components of the roller support system, including the
+                        base, side hinges, screws, rollers, and axle rods. Assembled the components in
+                        SOLIDWORKS to ensure proper fit and function. Conducted stress analysis to ensure
+                        the durability and reliability of the assembly.</p>
+                </div>
+                <div class="news-card">
+                    <img src="pre.jpg" alt="News 6">
+                    <h3>Simulating Interface for Pressure Cylinders in Nuclear Power Plant</h3>
+                    <p class="date">Developed an interface to monitor pressure levels in nuclear power plant
+                        cylinders. Communicated effectively with cross-functional teams to ensure
+                        seamless integration with existing plant systems. Set up alarms for high-pressure
+                        occurrences to ensure safety and compliance with regulations, resulting in a 20%
+                        improvement in system reliability.</p>
+                </div>
+                <div class="news-card">
+                    <img src="virt.jpg" alt="News 6">
+                    <h3>Virtual Factory Simulation</h3>
+                    <p class="date">Adapted quickly to new simulation tools to design and visualize factory
+                        layouts, including equipment placement, material flow, and worker movement.
+                        Conducted what-if scenarios to evaluate the impact of different layout configurations
+                        on production performance, demonstrating flexibility and achieving a 15% increase
+                        in production efficiency.</p>
+                </div>
+            </div>
+        </section>
+        <br>
+        <section id="services" class="section">
+            <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 25px; letter-spacing: 3px;">My Skills</h1>
+            <div class="services">
+                <div class="service" style="background-color: #ffc400; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                    <h3>Engineering & Design</h3>
+                    <p>SOLIDWORKS, Switchgear Designing, Process Design,
+                        Production Process Mapping, Manufacturing Processes, CAD Design.</p>
+                </div>
+                <div class="service" style="background-color: white; color: #ffc400; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                    <h3>Quality Control</h3>
+                    <p>Six Sigma Green Belt, Corrective Actions, Quality Assurance
+                        Processes, Visual Inspection, Engineering Change, Material Flow Reduction.</p>
+                </div>
+                <div class="service" style="background-color: #ffc400; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                    <h3>Technical Proficiency</h3>
+                    <p>CNC Operation, CNC Machine, Laser Cutting, Material
+                        Requirements Planning (MRP), Data Analysis, Pivot Tables.</p>
+                </div>
+                <div class="service" style="background-color: white; color: #ffc400; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                    <h3>Project Management</h3>
+                    <p> Lean Processes, Production Part Approval Process (PPAP).</p>
+                </div>
+                <div class="service" style="background-color: #ffc400; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                    <h3>Software</h3>
+                    <p> MASTER-CAM, CATIA, ANSYS FLUENT, IGNITION SCADA, Tecnomatix.</p>
+                </div>
+            </div>
+        </section>
+    
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p><a href="https://www.linkedin.com/in/karun-bolli-790871198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_ap" target="new"><img src="linkedin.png" width="60px" height="60px" style="float: left; margin-left: 42%;" ></a></p>
+            <p><a href="https://www.instagram.com/karun_and_1000_others/profilecard/?igsh=MzRlODBiNWFlZA==" target="new"><img src="instagram.png" width="60px" height="60px" style="float: right; margin-right: 42%;" ></a></p>
+        </section>
+    
+        <section id="counters" class="section dark">
+            <h2>My achievements</h2>
+            <div class="counters">
+                <div class="counter">
+                    <h3 data-target="10">0</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="counter">
+                    <h3 data-target="6">0</h3>
+                    <p>Skills Mastered</p>
+                </div>
+            </div>
+        </section>
+    
+
+    </div>
+
+
+    <script>
+        const counters = document.querySelectorAll('.counter h3');
+        let countersStarted = false;
+
+        const updateCounter = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const increment = Math.ceil(target / 700);
+            let current = +counter.textContent;
+
+            const countInterval = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target;
+                    clearInterval(countInterval);
+                } else {
+                    counter.textContent = current;
+                }
+            }, 70);
+        };
+
+        const handleScroll = () => {
+            const section = document.querySelector('#counters');
+            const sectionPosition = section.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.5;
+
+            if (sectionPosition < screenPosition && !countersStarted) {
+                counters.forEach(counter => updateCounter(counter));
+                countersStarted = true;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
+
+<script>
+    const words = ['portfolio', 'achievements', 'projects'];
+    let index = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const dynamicTextElement = document.getElementById('dynamicText');
+
+    // Function to interpolate between white (rgb(255, 255, 255)) and yellow (rgb(255, 255, 0))
+    function getColorProgression(step, totalSteps) {
+      const r = 255;
+      const g = 255 - Math.floor((255 * step) / totalSteps);
+      const b = Math.floor((255 * step) / totalSteps);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    function type() {
+      const currentWord = words[index];
+      const totalSteps = currentWord.length;
+
+      if (!isDeleting) {
+        dynamicTextElement.textContent = currentWord.substring(0, charIndex++);
+        
+        // Update the color based on the number of characters typed
+        dynamicTextElement.style.color = getColorProgression(charIndex, totalSteps);
+        
+        if (charIndex === currentWord.length) {
+          isDeleting = true;
+        }
+      } else {
+        dynamicTextElement.textContent = currentWord.substring(0, charIndex--);
+        
+        // Update the color based on the number of characters deleted
+        dynamicTextElement.style.color = getColorProgression(charIndex, totalSteps);
+        
+        if (charIndex === 0) {
+          isDeleting = false;
+          index = (index + 1) % words.length;
+        }
+      }
+      setTimeout(type, isDeleting ? 100 : 150);
+    }
+
+    type(); // Start typing effect
+  </script>
+</body>
+</html>
